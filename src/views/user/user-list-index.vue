@@ -3,7 +3,7 @@
     h1 用户列表
     sy-pagin-table(url='/user/list' :columns='columns' :mock='mock')
       template(v-slot:operate='scope') 
-        a(href='javascript:false' @click='edit(scope.data.row)') 编辑
+        a(href='javascript:false' @click='edit(scope.data)') 编辑
 </template>
 
 <script>
@@ -48,9 +48,14 @@ export default {
     }
   },
   methods: {
-    edit(rec) {
+    edit(data) {
+      const {
+        row:rec,
+        index
+      } = data
+      
       this.$router.push({
-        name: 'edit-user',
+        name: index % 2 === 0 ? 'edit-user' : 'edit-user-syform',
         params: {
           id: rec.id
         }
