@@ -1,7 +1,7 @@
 <template lang="pug">
   .user-add-main
-    h1 编辑用户
-    user-form.mt100(url='/user' :id='userId' :mock='mock')
+    h1 编辑用户 (Based on form-mixin)
+    user-form(url='/user' :id='userId' :mock='mock')
 
 </template>
 

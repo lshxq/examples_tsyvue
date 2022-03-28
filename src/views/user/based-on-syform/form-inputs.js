@@ -15,14 +15,16 @@ export default [
     label: '性别',
     name: 'gender',
     value: '1',
-    kind: 2,
-    options: [{
-      label: '男',
-      value: '1'
-    }, {
-      label: '女',
-      value: '0'
-    }]
+    meta: {
+      kind: 2,
+      options: [{
+        label: '男',
+        value: '1'
+      }, {
+        label: '女',
+        value: '0'
+      }]
+    }
   },
   {
     type: 'input',

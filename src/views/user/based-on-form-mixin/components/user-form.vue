@@ -1,5 +1,6 @@
 <template lang="pug">
   .tsy-form-mixin-example-main-form
+    p 由element-ui自由构建layout，仅通过form-mixin获得form交互逻辑，layout更加灵活
     el-form(:model="modified", label-width="80px", ref="formRef", :rules="rules")
       el-form-item(label="姓名", prop="name" )
         el-input.w400(:disabled='!!id || id == 0' v-model.trim="modified.name" show-word-limit :maxlength='30')
@@ -72,10 +73,14 @@ export default {
       return data;
     },
     submitted() {
-      this.goto("form-mixin");
+      this.$router.push({
+        name: "user-list"
+      });
     },
     cancel() {
-      this.goto("form-mixin");
+      this.$router.push({
+        name: "user-list"
+      });
     },
     
   },

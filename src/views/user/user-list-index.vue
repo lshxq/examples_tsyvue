@@ -3,7 +3,7 @@
     h1 用户列表
     sy-pagin-table(url='/user/list' :columns='columns' :mock='mock')
       template(v-slot:operate='scope') 
-        a(href='javascript:false' @click='edit(scope.data)') 编辑
+        a(href='javascript:false' @click='edit(scope.data)') 编辑用户 ({{scope.data.index % 2 === 0 ? ' form-mixin ' : ' syform '}})
 </template>
 
 <script>

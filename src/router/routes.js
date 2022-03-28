@@ -3,27 +3,27 @@ export default [
     path: '/user/add',
     name: 'add-user',
     meta: {
-      navi: '添加用户'
+      navi: '添加用户 (Based on form-mixin)'
     },
-    component: () => import('../views/user/user-add-index.vue')
+    component: () => import('../views/user/based-on-form-mixin/user-add-index.vue')
   },
   {
     path: '/syform/user/add',
     name: 'syform-add-user',
     meta: {
-      navi: '添加用户 syform'
+      navi: '添加用户 (based on syform)'
     },
-    component: () => import('../views/user/user-add-syform-index.vue')
+    component: () => import('../views/user/based-on-syform/user-add-syform-index.vue')
   },
   {
     path: '/user/:id/edit',
     name: 'edit-user',
-    component: () => import('../views/user/user-edit-index.vue')
+    component: () => import('../views/user/based-on-form-mixin/user-edit-index.vue')
   },
   {
     path: '/syform/user/:id/edit',
     name: 'edit-user-syform',
-    component: () => import('../views/user/user-edit-syform-index.vue')
+    component: () => import('../views/user/based-on-syform/user-edit-syform-index.vue')
   },
   {
     path: '/user/list',
