@@ -1,7 +1,7 @@
 <template lang="pug">
-  .user-add-main
-    h1 新建用户 (Based on form-mixin)
-    user-form(url='/user')
+.user-add-main
+  h1 新建用户 (Based on form-mixin)
+  user-form(url='/user')
 
 </template>
 

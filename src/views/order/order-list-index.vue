@@ -1,12 +1,12 @@
 <template lang="pug">
-  .order-main
-    h2.mb30 订单信息
-    sy-pagin-data(url='/order/list' :mock='mock')
-      template(slot-scope='scope')
-        .order-card.mb30(v-for='(order, idx) of scope.data' :key='idx')
-          .flex-center
-            img(src='../../assets/logo.png')
-          .order-name.flex-center {{order.name}}
+.order-main
+  h2.mb30 订单信息
+  sy-pagin-data(url='/order/list' :mock='mock')
+    template(v-slot:='scope')
+      .order-card.mb30(v-for='(order, idx) of scope.data' :key='idx')
+        .flex-center
+          img(src='../../assets/logo.png')
+        .order-name.flex-center {{order.name}}
 </template>
 
 <script>

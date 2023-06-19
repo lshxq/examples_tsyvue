@@ -1,18 +1,20 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import tsy from 'tsyvue'
-import element from 'element-ui'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import axios from 'axios'
 import router from './router'
-import 'element-ui/lib/theme-chalk/index.css';
 import './assets/main.sass'
 
-Vue.config.productionTip = false
 
-Vue.use(tsy)
-Vue.use(element)
+const app = createApp(App)
+app.use(tsy)
+app.use(ElementPlus)
+app.use(router)
 
-Vue.mixin({
+
+app.mixin({
   created() {
     this.$axios = (reqOpt) => { // 全局绑定 $axios, 为sy-pagin-xxxx 和 form-mixin使用 !important
       return new Promise((res, rej) => {
@@ -31,7 +33,5 @@ Vue.mixin({
   }
 })
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app')
+
+app.mount('#app')

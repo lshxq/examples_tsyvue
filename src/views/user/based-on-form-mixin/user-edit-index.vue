@@ -1,7 +1,7 @@
 <template lang="pug">
-  .user-add-main
-    h1 编辑用户 (Based on form-mixin)
-    user-form(url='/user' :id='userId' :mock='mock')
+.user-add-main
+  h1 编辑用户 (Based on form-mixin)
+  user-form(url='/user' :id='userId' :mock='mock')
 
 </template>
 

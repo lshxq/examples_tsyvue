@@ -40,13 +40,5 @@ export default [
       navi: '订单一览'
     },
     component: () => import('../views/order/order-list-index.vue')
-  },
-  {
-    path: '/pano',
-    name: 'pano',
-    meta: {
-      navi: '全景'
-    },
-    component: () => import('../views/pano/pano-index.vue')
   }
 ]

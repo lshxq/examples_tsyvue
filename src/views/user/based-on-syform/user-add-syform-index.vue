@@ -1,7 +1,7 @@
 <template lang='pug'>
-  .user-add-main
-    h1 新建用户 （Based on syform）
-    sy-form(:inputs='formInputs' url='/syform/user' @submitted='submitted' @canceled='canceled')
+.user-add-main
+  h1 新建用户 （Based on syform）
+  sy-form(:inputs='formInputs' url='/syform/user' @submitted='submitted' @canceled='canceled')
 </template>
 
 <script>

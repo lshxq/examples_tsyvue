@@ -1,18 +1,21 @@
 <template lang='pug'>
-  sy-split-screen-vertical
-    template(slot='left')
+sy-split-screen-vertical
+  template(v-slot:left)
+    template(v-for="(rr, idx) of routes")
       .navi-link(
-        v-for="(route, idx) of routes"
-        v-if='route.meta && route.meta.navi'
+        v-if='rr.meta && rr.meta.navi'
         :key='idx' 
-        @click='goto(route)') {{route.meta.navi}}
-    template(slot='right') 
-      .right-panel
-        router-view
+        @click='goto(rr)') {{rr.meta.navi}}
+  template(v-slot:right) 
+    .right-panel
+      router-view
 </template>
 
 <script>
 import routes from './router/routes.js'
+
+console.log(routes)
+
 export default {
   computed: {
     routes() {
@@ -30,12 +33,12 @@ export default {
 </script>
 
 <style lang='sass'>
-body,html
+body,html,#app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: #2c3e50
-  height: 100%
+  height: 100vh
   margin: 0
 </style>
 
