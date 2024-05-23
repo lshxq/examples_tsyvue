@@ -16,7 +16,8 @@ export default [
     name: 'gender',
     value: '1',
     meta: {
-      kind: 2,
+      type: 2,
+      multiple: false,
       options: [{
         label: '男',
         value: '1'
